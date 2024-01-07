@@ -1,11 +1,10 @@
 'use strict'
 
 const getUsersWithFriend = (users, friendName) => {
-    const usersWithFriend = []
-    users.forEach(function (user) {
-        user.friends === friendName ? usersWithFriend.push(user.name) : []    
-    })
-    return usersWithFriend
+    
+    const usersWithFriends = users.filter(user => user.friends.includes(friendName))
+    
+    return usersWithFriends
 }
 
 const allUsers = [
